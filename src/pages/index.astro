@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+---
+
+<Layout title="María Ávila - Nutrióloga en Zacatecas">
+  <Hero />
+  <Services />
+  
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-ablatin text-4xl text-primary mb-6">
+            Sobre Mí
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Soy María Ávila, nutrióloga especializada en crear planes de alimentación personalizados que se adaptan a tu estilo de vida. Mi objetivo es ayudarte a alcanzar tus metas de salud de manera sostenible y saludable.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-block bg-secondary hover:bg-accent text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
+          >
+            Conoce más
+          </a>
+        </div>
+        <div class="bg-light p-8 rounded-lg">
+          <h3 class="font-ablatin text-2xl text-secondary mb-4">
+            Horarios de Atención
+          </h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>Lunes a Viernes: 9:00 AM - 7:00 PM</li>
+            <li>Sábados: 9:00 AM - 2:00 PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

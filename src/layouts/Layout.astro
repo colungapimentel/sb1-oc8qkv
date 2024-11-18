@@ -1,0 +1,80 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Nutrióloga María Ávila - Especialista en nutrición en Zacatecas" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white">
+    <header class="bg-primary text-white">
+      <nav class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+          <a href="/" class="font-ablatin text-2xl">María Ávila</a>
+          <div class="hidden md:flex space-x-8">
+            <a href="/" class="hover:text-accent">Inicio</a>
+            <a href="/servicios" class="hover:text-accent">Servicios</a>
+            <a href="/blog" class="hover:text-accent">Blog</a>
+            <a href="/contacto" class="hover:text-accent">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-white mt-20">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-ablatin text-xl mb-4">Contacto</h3>
+            <p>Tel: 492 175 93 10</p>
+            <a href="https://wa.me/524921759310" class="text-accent hover:text-white">
+              WhatsApp
+            </a>
+          </div>
+          <div>
+            <h3 class="font-ablatin text-xl mb-4">Ubicaciones</h3>
+            <p class="mb-4">Plaza Akusara José López Portillo 220-interior 15, Tres Cruces, 98064 Zacatecas, Zac</p>
+            <p>Av. Morelos 517-A 1er piso, Zacatecas Centro</p>
+          </div>
+          <div>
+            <h3 class="font-ablatin text-xl mb-4">Redes Sociales</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-accent hover:text-white">Facebook</a>
+              <a href="#" class="text-accent hover:text-white">Doctoralia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Ablatin Bold';
+    src: url('/fonts/Ablatin-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+const services = [
+  {
+    title: "Consulta Nutricional",
+    description: "Evaluación completa y plan personalizado de alimentación",
+  },
+  {
+    title: "Seguimiento Mensual",
+    description: "Monitoreo de progreso y ajustes en tu plan nutricional",
+  },
+  {
+    title: "Asesoría Online",
+    description: "Consultas virtuales para tu comodidad",
+  },
+];
+---
+
+<section class="py-20 bg-light">
+  <div class="container mx-auto px-4">
+    <h2 class="font-ablatin text-4xl text-primary text-center mb-12">
+      Servicios
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        services.map((service) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="font-ablatin text-2xl text-secondary mb-4">
+              {service.title}
+            </h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
